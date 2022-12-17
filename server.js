@@ -1,5 +1,5 @@
 const express = require('express')
-const studentRoutes = require('./src/student/routes')
+const vocabRoutes = require('./src/vocab/routes')
 
 const app = express()
 const port = 5000
@@ -7,9 +7,9 @@ const port = 5000
 app.use(express.json())
 
 app.get('/', (req, res) => {
-  res.send('Hello World')
+  res.end('Hello World!')
 })
 
-app.use('/api/v1/students', studentRoutes)
+app.use('/api/v1/vocab', vocabRoutes)
 
-app.listen(port, () => console.log('app listening on port ' + port))
+app.listen(port, () => console.log('app is running on port' + port))
